@@ -1,0 +1,3 @@
+username|phone|QQ|email
+qytaws1|13911116666|666666|qytaws1@qytang.com
+qytaws2|13911118888|888888|qytaws2@qytang.com

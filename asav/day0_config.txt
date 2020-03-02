@@ -1,0 +1,18 @@
+! https://www.cisco.com/c/en/us/td/docs/security/asa/asa910/asav/quick-start-book/asav-910-qsg/asav_aws.html
+interface management0/0
+management-only
+nameif management
+security-level 100
+ip address dhcp
+no shut
+!
+same-security-traffic permit inter-interface
+same-security-traffic permit intra-interface
+!
+crypto key generate rsa modulus 2048
+ssh 0 0 management
+ssh timeout 30
+aaa authentication ssh console LOCAL
+username admin password Cisc0123 privilege 15
+username admin attributes
+service-type admin

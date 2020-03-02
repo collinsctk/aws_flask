@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    乾颐堂员工信息查询
+{% endblock title %}
+
+{% block head %}
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+{% endblock head %}
+
+{% block js %}
+    <script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+{% endblock js %}
+
+{% block body %}
+    <div class="container">
+        <br><h2 style="color: #666666">学员信息查询</h2>
+        {# 创建显示学员信息的Table,注意id="mytable", 后续DataTable JavaScript就对这个ID的Table进行渲染优化 #}
+        <table class="table table-bordered" id="mytable">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">姓名</th>
+                    <th scope="col">电话</th>
+                    <th scope="col">QQ</th>
+                    <th scope="col">邮件</th>
+                </tr>
+            </thead>
+            <tbody id="mytable-tbody">
+                {% for staff in staff_list %}
+                    <tr>
+                        <th scope="row">{{ loop.index }}</th>
+                        <td>{{ staff.username }}</td>
+                        <td>{{ staff.phone }}</td>
+                        <td>{{ staff.QQ }}</td>
+                        <td>{{ staff.email }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {# DataTable渲染显示客户信息的Table #}
+    {# 需要加载如下的CSS和JS #}
+    {# <link rel="stylesheet" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"> #}
+    {# <script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> #}
+    <script>
+        $(document).ready( function () {
+            $('#mytable').DataTable();
+        } );
+    </script>
+
+    {# DataTable中点击任何一个条目变深色,表示被选中功能的JavaScript #}
+    <script>
+    $(document).ready(function() {
+        var table = $('#mytable').DataTable();
+
+        $('#mytable tbody').on( 'click', 'tr', function () {
+            if ( $(this).hasClass('selected') ) {
+                $(this).removeClass('selected');
+            }
+            else {
+                table.$('tr.selected').removeClass('selected');
+                $(this).addClass('selected');
+            }
+        } );
+
+        $('#button').click( function () {
+            table.row('.selected').remove().draw( false );
+        } );
+    } );
+    </script>
+{% endblock body %}

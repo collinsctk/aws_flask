@@ -1,0 +1,11 @@
+重启AMI的网络
+/etc/init.d/network restart
+
+1.先安装跳板机, 跳板网络 MGMT Subnet1 (10.1.100.0/24)
+2.跳板机两个网卡, 一个公网, 一个跳板网络
+3.创建ASA,创建WEB服务器,这两个机器的Primary Network Interface都放在跳板网络
+4.测试跳板机对ASA和WEB服务器的管理
+5.ASA添加Outside和Inside,有对应的Interface(ASA_Outside和ASA_Inside)
+6.给WEB服务器添加Inside的网卡, 有对应的Interface(Web_Inside)
+7.配置ASA
+8.配置WEB服务器网络

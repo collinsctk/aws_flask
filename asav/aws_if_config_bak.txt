@@ -1,0 +1,11 @@
+ASA 三个口
+
+eth0 (MGMT) 10.1.100.231(DHCP)                   Primary network interface
+eth1 (G0/0) 10.1.1.45(DHCP) -----Internet        ASA_Outside
+eth2 (G0/1) 10.1.11.254(ASA Static Config)       ASA_Inside
+
+
+WEB 一个接口
+
+eth0 10.1.100.123 (跳板网络接口)  [注意:主网络是不能被Detach的]
+eth1 10.1.11.100  (Web内部网络, ASA Inside网络)   Web_Inside

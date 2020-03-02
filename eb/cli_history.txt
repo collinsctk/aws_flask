@@ -1,0 +1,76 @@
+252  pip install awsebcli --upgrade --user
+  253  pip3 install awsebcli --upgrade --user
+  254  eb --version
+  255  eb
+  256  eb --version
+  257  pip3 install awsebcli --upgrade --user
+  258  echo $SHELL
+  259  export PATH=/bin/bash:$PATH
+  260  ls -a ~
+  261  source ~/.bash_profile
+  262  eb --version
+  263  find / | grep eb
+  264  find / | grep awseb
+  265  export PATH=/root/.local/lib/python3.6/site-packages/:$PATH
+  266  eb
+  267  export PATH=/root/.local/lib:$PATH
+  268  eb
+  269  python
+  270  export PATH=~/.local/lib/python3.6/site-packages:$PATH
+  271  echo $PATH
+  272  python
+  273  eb
+  274  url -O https://bootstrap.pypa.io/get-pip.py
+  275  curl -O https://bootstrap.pypa.io/get-pip.py
+  276  ls
+  277  python get-pip.py --user
+  278  export PATH=/root/.local/bin:$PATH
+  279  source ~/.bash_profile
+  280  pip
+  281  pip --version
+  282  echo $PATH
+  283  cd .local/bin/
+  284  ls
+  285  eb
+  286  pwd
+  287  export PATH=/root/.local/bin/:$PATH
+  288  eb
+  289  this is a command
+  290  cd /
+  291  mkdir eb-flask
+  292  cd eb-flask/
+  293  pip
+  294  eb
+  295  pip
+  296  pip --version
+  297  pip3 install virtualenv
+  298  virtualenv virt
+  299  source virt/bin/activate
+  300  pip --version
+  301  pip install flask==1.0.2
+  302  pip freeze
+  303  pip freeze > requirements.txt
+  304  vim application.py
+  305  python application.py
+  306  ls
+  307  vim .ebignore
+  308  eb init -p python-3.6 flask-tutorial --region us-northeast-2
+  309  eb init -p python-3.6 flask-tutorial --region ap-northeast-2
+  310  eb init
+  311  eb create flask-env
+  312  eb open
+  313  ls
+  314  ifconfig
+  315  eb deploy
+  316  pip install requests
+  317  pip freeze > requirements.txt
+  318  eb deploy
+  319  pip install boto3
+  320  pip freeze > requirements.txt
+  321  eb deploy
+  322  ls
+  323  ls -an
+  324  cat  .ebignore
+  325  histroy
+  326  hisory
+  327  history

@@ -1,0 +1,10 @@
+[Unit]
+Description=uWSGI instance to serve qytang
+After=network.target
+
+[Service]
+User=root
+ExecStart=/usr/bin/bash -c 'cd /AWS/; uwsgi --ini /AWS/app.ini'
+
+[Install]
+WantedBy=multi-user.target

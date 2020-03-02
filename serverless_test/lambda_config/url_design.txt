@@ -1,0 +1,3 @@
+/qytaws/ get
+/qytaws/ post
+/qytaws/{id} get
