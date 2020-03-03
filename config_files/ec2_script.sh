@@ -1,6 +1,4 @@
 #!/bin/bash
-# 安装python3
-yum install -y python3
 
 # 激活ssh root密码登录
 sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
@@ -16,11 +14,14 @@ echo '[default]' > ~/.aws/config
 echo 'region=ap-northeast-2' >> ~/.aws/config
 
 # git下载项目
-cd /
-yum install -y git
-git config --global credential.helper '!aws codecommit credential-helper $@'
-git config --global credential.UseHttpPath true
-git clone https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/aws_flask
+#cd /
+#yum install -y git
+#git config --global credential.helper '!aws codecommit credential-helper $@'
+#git config --global credential.UseHttpPath true
+#git clone https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/aws_flask
+
+# 安装python3
+yum install -y python3
 
 # 安装python 模块
 pip3 install boto3

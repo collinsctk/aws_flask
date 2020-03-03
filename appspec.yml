@@ -1,0 +1,11 @@
+version: 0.0
+os: linux
+files:
+  - source: .
+    destination: /aws_flask/
+hooks:
+#  BeforeInstall:
+#    - location: before_install.sh
+  AfterInstall:
+    - location: after_install.sh
+      timeout: 60
