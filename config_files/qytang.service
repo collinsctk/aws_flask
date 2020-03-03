@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 User=root
-ExecStart=/usr/bin/bash -c 'cd /AWS/; uwsgi --ini /AWS/app.ini'
+ExecStart=/usr/bin/bash -c 'cd /aws_flask/; uwsgi --ini /aws_flask/app.ini'
 
 [Install]
 WantedBy=multi-user.target

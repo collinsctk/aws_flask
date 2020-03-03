@@ -4,7 +4,7 @@ from insert_db_3_get_item import get_all_item
 import requests
 
 # 默认目录为当前目录的templates
-template_dir = os.path.abspath('/AWS/templates')
+template_dir = os.path.abspath('/aws_flask/templates')
 
 app = Flask(__name__, template_folder=template_dir)
 
