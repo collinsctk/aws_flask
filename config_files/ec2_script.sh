@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # 激活ssh root密码登录
-sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
-sed -i "s/#PermitRootLogin yes/PermitRootLogin yes/g" /etc/ssh/sshd_config
-sed -i "s/UsePAM yes/UsePAM no/g" /etc/ssh/sshd_config
-> ~/.ssh/authorized_keys
-sudo sh -c 'echo root:Cisc0123 | chpasswd'
-service sshd restart
+#sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
+#sed -i "s/#PermitRootLogin yes/PermitRootLogin yes/g" /etc/ssh/sshd_config
+#sed -i "s/UsePAM yes/UsePAM no/g" /etc/ssh/sshd_config
+#> ~/.ssh/authorized_keys
+#sudo sh -c 'echo root:Cisc0123 | chpasswd'
+#service sshd restart
 
 # 设置aws的region
 mkdir ~/.aws/
@@ -14,11 +14,12 @@ echo '[default]' > ~/.aws/config
 echo 'region=ap-northeast-2' >> ~/.aws/config
 
 # git下载项目
-#cd /
-#yum install -y git
+cd /
+yum install -y git
 #git config --global credential.helper '!aws codecommit credential-helper $@'
 #git config --global credential.UseHttpPath true
 #git clone https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/aws_flask
+git clone https://github.com/collinsctk/aws_flask.git
 
 # 安装python3
 yum install -y python3
