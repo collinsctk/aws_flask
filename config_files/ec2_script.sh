@@ -18,8 +18,13 @@ cd /
 yum install -y git
 #git config --global credential.helper '!aws codecommit credential-helper $@'
 #git config --global credential.UseHttpPath true
-#git clone https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/aws_flask
-git clone https://github.com/collinsctk/aws_flask.git
+#~/.gitconfig
+#[credential]
+#        helper = !aws codecommit credential-helper $@
+#        UseHttpPath = true
+aws s3 cp s3://qytawslabfile/.gitconfig ~/.gitconfig
+sudo git clone https://git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/aws_flask
+#git clone https://github.com/collinsctk/aws_flask.git
 
 # 安装python3
 yum install -y python3
