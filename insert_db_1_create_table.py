@@ -7,9 +7,6 @@
 # https://ke.qq.com/course/271956?tuin=24199d8a
 
 import boto3
-import os
-# os.environ['AWS_DEFAULT_REGION'] = 'ap-northeast-2'
-
 dynamodb = boto3.resource('dynamodb', 'ap-northeast-2')
 
 table = dynamodb.create_table(

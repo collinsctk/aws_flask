@@ -7,7 +7,7 @@
 # https://ke.qq.com/course/271956?tuin=24199d8a
 
 import boto3
-dynamodb = boto3.resource('dynamodb')
+dynamodb = boto3.resource('dynamodb', 'ap-northeast-2')
 
 def get_all_item(table_name):
     table = dynamodb.Table(table_name)
