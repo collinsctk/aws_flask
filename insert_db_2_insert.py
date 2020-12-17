@@ -7,8 +7,8 @@
 # https://ke.qq.com/course/271956?tuin=24199d8a
 
 import boto3
-from insert_db_0_db import stu_db
-dynamodb = boto3.resource('dynamodb', 'ap-northeast-2')
+from insert_db_0_db import stu_db, region_name
+dynamodb = boto3.resource('dynamodb', region_name)
 
 table = dynamodb.Table('staff')
 
