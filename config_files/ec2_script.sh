@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # 激活ssh root密码登录
-#sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
-#sed -i "s/#PermitRootLogin yes/PermitRootLogin yes/g" /etc/ssh/sshd_config
-#sed -i "s/UsePAM yes/UsePAM no/g" /etc/ssh/sshd_config
-#> ~/.ssh/authorized_keys
-#sudo sh -c 'echo root:Cisc0123 | chpasswd'
-#service sshd restart
+sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
+sed -i "s/#PermitRootLogin yes/PermitRootLogin yes/g" /etc/ssh/sshd_config
+sed -i "s/UsePAM yes/UsePAM no/g" /etc/ssh/sshd_config
+> ~/.ssh/authorized_keys
+sudo sh -c 'echo root:Cisc0123 | chpasswd'
+service sshd restart
 
 # 设置aws的region
 mkdir ~/.aws/
