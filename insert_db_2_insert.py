@@ -8,6 +8,7 @@
 
 import boto3
 import requests
+from insert_db_0_db import stu_db
 availability_zone = requests.get("http://169.254.169.254/latest/meta-data/placement/availability-zone").text
 region_name = availability_zone[:-1]
 
