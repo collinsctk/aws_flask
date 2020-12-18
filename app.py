@@ -17,8 +17,8 @@ def index():
     availability_zone = requests.get("http://169.254.169.254/latest/meta-data/placement/availability-zone").text
     return render_template('index.html',
                            devnet_main='乾颐堂AWS测试',
-                           instance_id = instance_id,
-                           availability_zone = availability_zone,
+                           instance_id=instance_id,
+                           availability_zone=availability_zone,
                            active='首页')
 
 
