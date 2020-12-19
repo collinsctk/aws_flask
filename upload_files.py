@@ -8,13 +8,17 @@
 
 import boto3
 import os
-s3 = boto3.resource('s3')
+import requests
+availability_zone = requests.get("http://169.254.169.254/latest/meta-data/placement/availability-zone").text
+region_name = availability_zone[:-1]
+
+s3 = boto3.resource('s3', region_name)
 for bucket in s3.buckets.all():
     if bucket.name.startswith("webapp-"):
         bucket_name = bucket.name
         break
 
-s3_client = boto3.client('s3')
+s3_client = boto3.client('s3', region_name)
 os.chdir('/aws_flask/static/images')
 for i in os.walk(top='.'):
     for imag in i[2]:

@@ -7,7 +7,9 @@
 # https://ke.qq.com/course/271956?tuin=24199d8a
 
 import boto3
-from insert_db_0_db import region_name
+import requests
+availability_zone = requests.get("http://169.254.169.254/latest/meta-data/placement/availability-zone").text
+region_name = availability_zone[:-1]
 
 dynamodb = boto3.resource('dynamodb', region_name)
 
