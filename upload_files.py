@@ -22,4 +22,4 @@ s3_client = boto3.client('s3', region_name)
 os.chdir('/aws_flask/static/images')
 for i in os.walk(top='.'):
     for imag in i[2]:
-        s3_client.upload_file(imag, bucket_name, '/static/images/' + imag, ExtraArgs={'ACL':'public-read'})
+        s3_client.upload_file(imag, bucket_name, '/static/images/' + imag, ExtraArgs={'ACL': 'public-read'})

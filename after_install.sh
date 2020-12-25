@@ -3,7 +3,7 @@
 # 设置aws的region
 mkdir ~/.aws/
 echo '[default]' > ~/.aws/config
-echo 'region=ap-northeast-2' >> ~/.aws/config
+echo 'region=us-east-1' >> ~/.aws/config
 
 # 安装python3
 yum install -y python3
