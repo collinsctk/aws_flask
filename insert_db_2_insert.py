@@ -9,8 +9,13 @@
 import boto3
 import requests
 from insert_db_0_db import stu_db
-availability_zone = requests.get("http://169.254.169.254/latest/meta-data/placement/availability-zone").text
+from metadata_helper import get_metadata  # 导入之前定义的辅助函数
+
+# 通过 get_metadata 获取可用区信息，支持 IMDSv2
+availability_zone = get_metadata("placement/availability-zone")
+# 从可用区中截取出 region，例如 "us-east-1a" 截取为 "us-east-1"
 region_name = availability_zone[:-1]
+# 使用 region_name 初始化 DynamoDB 资源
 
 dynamodb = boto3.resource('dynamodb', region_name)
 
